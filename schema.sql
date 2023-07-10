@@ -1,8 +1,8 @@
 CREATE TABLE animals  (
-  id INT,
-  name TEXT,
-  date_of_birth DATE,
-  escape_attempts INT,
-  neutered BOOLEAN,
-  weigth_kg DECIMAL
+  id BIGSERIAL PRIMARY KEY NOT NULL,
+  animal_name TEXT NOT NULL,,
+  date_of_birth DATE NOT NULL,
+  escape_attempts INT NOT NULL,
+  neutered BOOLEAN NOT NULL,
+  weigth_kg DECIMAL NOT NULL,
 );
