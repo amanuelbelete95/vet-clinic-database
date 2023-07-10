@@ -7,3 +7,5 @@ SELECT * FROM animal WHERE neutered = true AND escape_attempts < 3;
 /*Queries animal by specific name*/
 SELECT * FROM animal WHERE animal_name = 'Agumon' OR animal_name = 'Pikachu'
 ORDER BY animal_name;
+/*Queries animal by neutered and weigth*/
+SELECT * FROM animal WHERE neutered = true AND weigth_kg > 10.5;
