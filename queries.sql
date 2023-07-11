@@ -34,3 +34,12 @@ BEGIN;
 DELETE FROM animal;
 ROLLBACK;
 
+/*delete specified date*/
+
+BEGIN;
+DELETE FROM animal WHERE date_of_birth > DATE '2022-01-01';
+
+/*CREATE SAVEPOINT*/
+SAVEPOINT SP1;
+UPDATE animal SET weigth_kg = weigth_kg * -1 ORDER BY id;
+ROLLBACK SP1;
