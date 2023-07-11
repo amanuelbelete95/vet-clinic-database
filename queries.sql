@@ -43,3 +43,16 @@ DELETE FROM animal WHERE date_of_birth > DATE '2022-01-01';
 SAVEPOINT SP1;
 UPDATE animal SET weigth_kg = weigth_kg * -1 ORDER BY id;
 ROLLBACK SP1;
+
+/*Count */
+SELECT COUNT(*) FROM animal;
+
+SELECT COUNT(animal_name)
+FROM animal
+WHERE escape_attempts = 0;
+
+SELECT AVG(weigth_kg) FROM animal;
+
+SELECT AVG(escape_attempts)
+FROM animal
+WHERE date_of_birth BETWEEN DATE '1990-01-01' AND DATE '2000-01-01';
