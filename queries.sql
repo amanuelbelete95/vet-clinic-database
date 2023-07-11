@@ -56,3 +56,9 @@ SELECT AVG(weigth_kg) FROM animal;
 SELECT AVG(escape_attempts)
 FROM animal
 WHERE date_of_birth BETWEEN DATE '1990-01-01' AND DATE '2000-01-01';
+
+SELECT COUNT(neutered) FROM animal
+WHERE neutered = true;
+
+SELECT COUNT(neutered) FROM animal
+WHERE neutered = false;
