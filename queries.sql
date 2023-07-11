@@ -19,3 +19,18 @@ SELECT * FROM animal WHERE neutered = true;
 SELECT * FROM animal WHERE animal_name = 'Gabumon';
 /*Queries animal  by weigth*/
 SELECT * FROM animal WHERE weight >= 10.4 AND weight <= 17.3;
+
+/*transaction */
+BEGIN;
+UPDATE animal SET species = 'digimon'
+WHERE animal_name LIKE '%mon';
+
+UPDATE animal SET species = 'pokemon'
+WHERE species IS NULL;
+
+/*transaction delete all table data*/
+
+BEGIN;
+DELETE FROM animal;
+ROLLBACK;
+
