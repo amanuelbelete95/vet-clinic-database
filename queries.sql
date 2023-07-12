@@ -19,3 +19,46 @@ SELECT * FROM animal WHERE neutered = true;
 SELECT * FROM animal WHERE animal_name = 'Gabumon';
 /*Queries animal  by weigth*/
 SELECT * FROM animal WHERE weight >= 10.4 AND weight <= 17.3;
+
+/*transaction */
+BEGIN;
+UPDATE animal SET species = 'digimon'
+WHERE animal_name LIKE '%mon';
+
+UPDATE animal SET species = 'pokemon'
+WHERE species IS NULL;
+
+/*transaction delete all table data*/
+
+BEGIN;
+DELETE FROM animal;
+ROLLBACK;
+
+/*delete specified date*/
+
+BEGIN;
+DELETE FROM animal WHERE date_of_birth > DATE '2022-01-01';
+
+/*CREATE SAVEPOINT*/
+SAVEPOINT SP1;
+UPDATE animal SET weigth_kg = weigth_kg * -1 ORDER BY id;
+ROLLBACK SP1;
+
+/*Count */
+SELECT COUNT(*) FROM animal;
+
+SELECT COUNT(animal_name)
+FROM animal
+WHERE escape_attempts = 0;
+
+SELECT AVG(weigth_kg) FROM animal;
+
+SELECT AVG(escape_attempts)
+FROM animal
+WHERE date_of_birth BETWEEN DATE '1990-01-01' AND DATE '2000-01-01';
+
+SELECT COUNT(neutered) FROM animal
+WHERE neutered = true;
+
+SELECT COUNT(neutered) FROM animal
+WHERE neutered = false;
