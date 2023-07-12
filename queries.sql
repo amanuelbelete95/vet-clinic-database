@@ -90,3 +90,19 @@ SET owner_id = (
   WHERE owner.full_name = 'Sam Smith';
 )
 WHERE animal_name = 'Agumon';
+
+UPDATE animal
+SET owner_id = (
+  SELECT id
+  FROM owner
+  WHERE owner.full_name = 'Jennifer Orwell'
+)
+WHERE animal_name = 'Gabumon' OR animal_name = 'Pikachu' ;
+
+UPDATE animal
+SET owner_id = (
+  SELECT id
+  FROM owner
+  WHERE owner.full_name = 'Bob'
+)
+WHERE animal_name = 'Devimon' AND animal_name = 'Plantmon' ;
