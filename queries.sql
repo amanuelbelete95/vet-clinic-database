@@ -115,3 +115,10 @@ SET owner_id = (
 )
 WHERE animal_name = 'Charmander' OR animal_name = 'Squirtle' OR animal_name = 'Blossom';
 
+UPDATE animal
+SET owner_id = (
+  SELECT id
+  FROM owner
+  WHERE owner.full_name = 'Dean Winchester'
+)
+WHERE animal_name = 'Angemon' OR animal_name = 'Boarmon';
