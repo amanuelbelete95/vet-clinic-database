@@ -6,5 +6,5 @@ CREATE TABLE animal  (
   neutered BOOLEAN NOT NULL,
   weigth_kg DECIMAL NOT NULL
 );
-ALTER TABLE animal_name
+ALTER TABLE animal
 ADD species TEXT;
