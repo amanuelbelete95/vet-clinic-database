@@ -62,3 +62,31 @@ WHERE neutered = true;
 
 SELECT COUNT(neutered) FROM animal
 WHERE neutered = false;
+
+-- third pull reques
+UPDATE animal
+SET species_id = (
+  SELECT id
+  FROM species
+  WHERE species.name_= 'Digimon'
+  LIMIT 1
+)
+WHERE animal_name LIKE '%mon';
+
+UPDATE animal
+SET species_id = (
+  SELECT id
+  FROM species
+  WHERE species.name = 'Pokemon'
+)
+WHERE animal.name_ NOT LIKE '%mon';
+
+Sam Smith owns Agumon.
+
+UPDATE animal
+SET owner_id = (
+  SELECT id
+  FROM owner
+  WHERE owner.full_name = 'Sam Smith';
+)
+WHERE animal_name = 'Agumon';

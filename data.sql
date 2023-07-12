@@ -22,3 +22,19 @@ INSERT INTO animal (animal_name,date_of_birth,escape_attempts,neutered,weigth_kg
 VALUES ('Blossom', DATE '1998-10-13',3,true,17.00);
 INSERT INTO animal (animal_name,date_of_birth,escape_attempts,neutered,weigth_kg)
 VALUES ('Ditto', DATE '2022-05-14',4,true,22.00);
+
+
+
+INSERT INTO owner (full_name, age) 
+VALUES ('Sam Smith', 34);
+VALUES ('Jennifer Orwell',19);
+VALUES ('Bob', 45);
+VALUES ('Melody Pond', 77);
+VALUES ('Dean Winchester', 14);
+VALUES ('Jodie Whittaker',38);
+
+INSERT INTO species (name_)
+VALUES ('Pokemon');
+
+INSERT INTO species (name_)
+VALUES ('Digimon');
